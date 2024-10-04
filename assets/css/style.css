@@ -1,0 +1,318 @@
+body{
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto';
+}
+a{
+    text-decoration: none;
+    color: unset;
+}
+
+/*inizio prima parte*/
+
+.menu {
+    position: absolute; /* Posizionamento assoluto */
+    top: 0; /* Allinea alla parte superiore */
+    left: -100%; /* Nasconde il menu a destra */
+    transition: transform 0.2s ease-out; /* Transizione per il movimento */
+    background-color: rgb(0, 0, 0); /* Colore di sfondo per il menu */
+    width: 100%; /* Larghezza del menu */
+    height: 100%;
+   
+}
+.menu>.title{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.menu>.title{
+    color: white;
+    
+    display: inline-block;
+    
+}
+.burger{
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    float: right;
+    display: none;
+}
+#chiudi{
+    color: white;
+    float: right;
+    margin: 20px 20px;
+    cursor: pointer;
+    font-size: 20px;
+}
+.link{
+    display: flex;
+    flex-direction: column;
+}
+.link>.opzion{
+    list-style-type: none;
+    margin-top: 30px;
+}
+.link>.opzion>.collegamenti{
+    text-decoration: none;
+    color: white;
+    font-size: 40px;
+    
+}
+.link>.opzion>.collegamenti:hover{
+    font-size: 42px;
+    transition: all 0.1s;
+}
+.nav-bar {
+    position: fixed;
+    display: flex;       
+    justify-content: center;           /* Imposta il layout come Flexbox */
+    align-items: center;            /* Allinea gli elementi verticalmente al centro */
+    width: 100%;
+    height: 80px;
+    background-color: rgb(0, 0, 0);
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    z-index: 1000;
+}
+.nav {
+    margin: 0;                      /* Rimuovi margini predefiniti */
+    text-align: center;    
+    color: white;         /* Centra il testo nel suo spazio */
+    font-size: 18px;
+    font-weight: 500;
+    margin: 0 20px;
+}
+.nav:hover{
+    color: yellow;
+}
+.logo{
+    position: absolute;
+    left: 0;
+    margin-left: 30px;
+    font-size: 23px;
+    
+}
+
+/*INIZIO SECONDA PARTE*/
+
+.video-background{
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    
+}
+video{
+    width: 100%; /* Rende il video responsive */
+    height: 100%; /* Rende il video responsive */
+    object-fit: cover; /* Copre l'intera area */
+    margin: 0;
+}
+.titoloSopra{
+    width: 700px;
+    
+    position: absolute;
+    z-index: 999;
+    right: 50%;
+    top: 50%;
+    transform: translateY(-50%);
+    transform: translateX(50%);
+    filter: blur(1px);
+}
+.titoloSopra>h2{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 40px;
+    text-align: center;
+    font-family: 'Archivo Black';
+    font-weight: 900        ;
+}
+.titoloSopra>h1{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: rgb(235, 225, 18);
+    font-size: 80px;
+    text-align: center;
+    font-family: 'Archivo Black';
+    font-weight:900        ;
+}
+
+/*INIZIO TERZA*/
+
+.terzaParte {
+    display: flex;                   /* Usa Flexbox per allineare i div */
+    width: 100%;
+    height: 550px;
+    background-color: black;
+}
+.sinistra {
+    width: 50%;                     /* Occupa il 50% dello spazio */
+    display: flex;                  /* Flex per centrare il contenuto */
+    justify-content: center;        /* Centra orizzontalmente */
+    align-items: center;  
+              /* Centra verticalmente */
+}
+.destra {
+    width: 50%;                     /* Occupa il 50% dello spazio */
+    display: flex;                  /* Flex per centrare il contenuto */
+    color: white;
+    filter: blur(0.5px);
+}
+.contenuto{
+    margin-top: 60px;
+    margin-left: 70px;
+    font-family: 'Archivo Black';
+}
+.contenuto>h1{
+    margin-top: 50px;
+    text-transform: uppercase;
+    color:  rgb(235, 225, 18);
+    line-height: 2;
+}
+.contenuto>h2{
+    margin: 0;
+    font-family: 'Oswald';
+    font-size: 18px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+}
+.contenuto>p{
+    margin: 0;
+    line-height: 2;
+    font-family: 'Oswald';
+    font-size: 20px;
+}
+.contenuto>button{
+    margin-top: 80px;
+}
+.btn-yellow{
+    
+    width: 250px;
+    padding: 10px;
+    font-family: 'Oswald';
+    font-weight: 400;
+    letter-spacing: 2px;
+    font-size: 20px;
+    text-transform: uppercase;
+    background-color: rgb(235, 225, 18);
+    border: 0px;
+    cursor: pointer;
+}
+
+/*inizio quarta*/
+
+.quartaParte{
+    width: 100%;
+    height: 600px;
+    display: flex;  
+    background-color: rgb(242, 240, 240);  
+}
+
+.tutorial{
+    width: 50%;                     /* Occupa il 50% dello spazio */
+    justify-content: center;        /* Centra orizzontalmente */
+    align-items: center;  
+    filter: blur(0.5px);
+    text-align: center;
+}
+.tutorial>h1{
+    margin-top: 110px;
+    font-family: 'Archivo Black';
+    font-size: 40px;
+    
+    text-transform: uppercase;
+}
+.tutorial>h2{
+    font-size: 30px;
+    font-family: 'Archivo Black';
+    text-transform: uppercase;
+    color: rgb(192, 184, 26);
+}
+.tutorial>button{
+    margin-top: 40px;
+}
+.tutorial>p{
+    margin-top: 60px;
+    line-height: 2;
+    font-family: 'Oswald';
+    font-size: 25px;
+}
+
+.scheda{
+    width: 50%;                     /* Occupa il 50% dello spazio */
+    justify-content: center;        /* Centra orizzontalmente */
+    align-items: center;  
+    filter: blur(0.5px);
+    text-align: center;
+}
+.scheda>h1{
+    margin-top: 110px;
+    font-family: 'Archivo Black';
+    font-size: 40px;
+    
+    text-transform: uppercase;
+}
+.scheda>p{
+    margin-top: 60px;
+    line-height: 2;
+    font-family: 'Oswald';
+    font-size: 25px;
+}
+
+.scheda>button{
+    margin-top: 40px;
+}
+
+.scheda,.tutorial{
+    color: black;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 728px) {
+   
+    .active {
+    transform: translateX(100%); 
+    z-index: 1001;
+}
+.main{
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    margin-left: 100px;
+    z-index: 1001;
+    
+}
+.burger{
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    float: right;
+    display: block;
+    margin-right: 30px;       /* Sposta l'icona a destra */
+
+}
+
+
+}
+
+
+
