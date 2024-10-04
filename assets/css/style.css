@@ -4,6 +4,12 @@
     font-family: 'Roboto';
     box-sizing: border-box;
 }
+body, html {
+    overflow-x: hidden;
+}
+*{
+    box-sizing: border-box;
+}
 a{
     text-decoration: none;
     color: unset;
@@ -288,8 +294,10 @@ video{
 
 
 
-@media only screen and (max-width: 412px) {
-   
+@media only screen and (max-width: 728px) {
+*{
+    box-sizing: border-box;
+}
 .active {
     transform: translateX(100%); 
     z-index: 1001;
@@ -304,7 +312,6 @@ video{
     font-weight: 400;
     
 }
-
 .burger {
     cursor: pointer;
     font-size: 40px;
@@ -340,30 +347,19 @@ video{
     font-size: 20px;
     transition: all 0.1s;
 }
-
-
 /*prima parte*/
-
 .nav-bar {
-    position: fixed;
-    display: flex;
-    justify-content: space-between;  /* Distribuisce gli elementi ai lati opposti */
-    align-items: center;             /* Allinea gli elementi verticalmente al centro */
-   width:  412px;
-    height: 80px;
-    background-color: rgb(0, 0, 0);
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    z-index: 1000;
-    padding: 0 20px; /* Aggiungi un po' di padding a sinistra e destra */
-    overflow: hidden;
+    position: relative;
+    justify-content: space-between; /* Distribuisci gli elementi */
+    align-items: center; /* Centra verticalmente */
     box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+    width: 100%;
 }
-
-
 .burger {
     cursor: pointer;
-    font-size: 40px;
+    font-size: 30px;
     color: white;
     margin-left: auto;
 }
@@ -381,7 +377,115 @@ video{
     font-size: 23px;
     
 }
+/*seconda parte*/
+.secondaParte{
+    height: 400px;
+    width: 100%;
+}
+.titoloSopra{
+    width: 700px;
+    position: absolute;
+    z-index: 999;
+    top: 200px;
+    
+    filter: blur(1px);
+}
+.titoloSopra>h2{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: rgb(255, 255, 255);
+    font-size: 20px;
+    
+    font-family: 'Archivo Black';
+    font-weight: 900        ;
+}
+.titoloSopra>h1{
+    font-family: 'Oswald';
+    text-transform: uppercase;
+    color: rgb(235, 225, 18);
+    font-size: 40px;
+    font-family: 'Archivo Black';
+    font-weight:900        ;
+}
+.video-background>video{
+    height: 400px;
+}
+.destra{
+    width: 100%;
+}
+.contenuto{
+    margin: 10px;
+}
+/*terza parte*/
+.terzaParte {
+    display: flex;
+    flex-direction: column;                   /* Usa Flexbox per allineare i div */
+    width: 100%;
+    height: 550px;
+    background-color: black;
+    margin-top: 0px;
+    padding: 0px;
+}
+.terzaParte>.destra>.contenuto>h2{
+    font-size: 10px;
+text-align: center;
+margin-top: 30px;
+}
+.terzaParte>.destra>.contenuto>h1{
+    font-size: 25px;
+    margin-top: 10px;
+    text-align: center;
+}
+.terzaParte>.destra>.contenuto>.btn-yellow{
+    margin-left: 50%;
+    transform: translateX(-50%);
+}
+.terzaParte>.sinistra>.foto{
+    display: none;
+}
+/*quarta parte*/
+.quartaParte{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
 
+.tutorial{
+    text-align: center;
+    width: 100%;
+}
+.tutorial>h1{
+    font-size: 20px;
+    margin: 0;
+    margin-top: 30px;
+}
+.tutorial>p{
+    font-size: 20px;
+    margin-top: 40px;
+}
+
+.scheda{
+    text-align: center;
+    width: 100%;
+    background-color: rgb(230, 226, 226);
+}
+.scheda>h1{
+    font-size: 20px;
+    margin: 0;
+    margin-top: 30px;
+}
+.scheda>p{
+    font-size: 20px;
+    margin-top: 40px;
+    margin-bottom: 35px;
+}
+.scheda>button,.tutorial>button{
+    width: 210px;
+}
+img, video, iframe {
+    max-width: 100%;
+    height: auto;
+}
 }
 
 
