@@ -416,6 +416,9 @@ video{
 .contenuto{
     margin: 10px;
 }
+.contenuto>.btn-yellow{
+    margin-top: 40px;
+}
 /*terza parte*/
 .terzaParte {
     display: flex;
