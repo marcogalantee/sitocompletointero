@@ -1,495 +1,590 @@
-    body{
-    margin: 0;
-    box-sizing: border-box;
-    font-family: 'Roboto';
-    box-sizing: border-box;
-}
-body, html {
-    overflow-x: hidden;
-}
-*{
-    box-sizing: border-box;
-}
-a{
-    text-decoration: none;
-    color: unset;
-}
+    body {
+        margin: 0;
+        box-sizing: border-box;
+        font-family: 'Roboto';
+        box-sizing: border-box;
+    }
 
-/*inizio prima parte*/
+    body,
+    html {
+        overflow-x: hidden;
+    }
 
-.menu {
-    position: absolute; /* Posizionamento assoluto */
-    top: 0; /* Allinea alla parte superiore */
-    left: -100%; /* Nasconde il menu a destra */
-    transition: transform 0.2s ease-out; /* Transizione per il movimento */
-    background-color: rgb(0, 0, 0); /* Colore di sfondo per il menu */
-    width: 100%; /* Larghezza del menu */
-    height: 100%;
-   
-}
-.menu>.title{
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-.menu>.title{
-    color: white;
-    
-    display: inline-block;
-    
-}
-.burger{
-    cursor: pointer;
-    font-size: 40px;
-    color: white;
-    float: right;
-    display: none;
-}
-#chiudi{
-    color: white;
-    float: right;
-    margin: 20px 20px;
-    cursor: pointer;
-    font-size: 20px;
-}
-.link{
-    display: flex;
-    flex-direction: column;
-}
-.link>.opzion{
-    list-style-type: none;
-    margin-top: 30px;
-}
-.link>.opzion>.collegamenti{
-    text-decoration: none;
-    color: white;
-    font-size: 40px;
-    
-}
-.link>.opzion>.collegamenti:hover{
-    font-size: 42px;
-    transition: all 0.1s;
-}
-.nav-bar {
-    position: fixed;
-    display: flex;       
-    justify-content: center;           /* Imposta il layout come Flexbox */
-    align-items: center;            /* Allinea gli elementi verticalmente al centro */
-    width: 100%;
-    height: 80px;
-    background-color: rgb(0, 0, 0);
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    z-index: 1000;
-}
-.nav {
-    margin: 0;                      /* Rimuovi margini predefiniti */
-    text-align: center;    
-    color: white;         /* Centra il testo nel suo spazio */
-    font-size: 18px;
-    font-weight: 500;
-    margin: 0 20px;
-}
-.nav:hover{
-    color: yellow;
-}
-.logo{
-    position: absolute;
-    left: 0;
-    margin-left: 30px;
-    font-size: 23px;
-    
-}
+    * {
+        box-sizing: border-box;
+    }
 
-/*INIZIO SECONDA PARTE*/
+    a {
+        text-decoration: none;
+        color: unset;
+    }
 
-.video-background{
-    width: 100%;
-    height: 100vh;
-    overflow: hidden;
-    
-}
-video{
-    width: 100%; /* Rende il video responsive */
-    height: 100%; /* Rende il video responsive */
-    object-fit: cover; /* Copre l'intera area */
-    margin: 0;
-}
-.titoloSopra{
-    width: 700px;
-    
-    position: absolute;
-    z-index: 999;
-    right: 50%;
-    top: 50%;
-    transform: translateY(-50%);
-    transform: translateX(50%);
-    filter: blur(1px);
-}
-.titoloSopra>h2{
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    font-size: 40px;
-    text-align: center;
-    font-family: 'Archivo Black';
-    font-weight: 900        ;
-}
-.titoloSopra>h1{
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    color: rgb(235, 225, 18);
-    font-size: 80px;
-    text-align: center;
-    font-family: 'Archivo Black';
-    font-weight:900        ;
-}
+    /*inizio prima parte*/
 
-/*INIZIO TERZA*/
+    .menu {
+        position: absolute;
+        /* Posizionamento assoluto */
+        top: 0;
+        /* Allinea alla parte superiore */
+        left: -100%;
+        /* Nasconde il menu a destra */
+        transition: transform 0.2s ease-out;
+        /* Transizione per il movimento */
+        background-color: rgb(0, 0, 0);
+        /* Colore di sfondo per il menu */
+        width: 100%;
+        /* Larghezza del menu */
+        height: 100%;
 
-.terzaParte {
-    display: flex;                   /* Usa Flexbox per allineare i div */
-    width: 100%;
-    height: 550px;
-    background-color: black;
-}
-.sinistra {
-    width: 50%;                     /* Occupa il 50% dello spazio */
-    display: flex;                  /* Flex per centrare il contenuto */
-    justify-content: center;        /* Centra orizzontalmente */
-    align-items: center;  
-              /* Centra verticalmente */
-}
-.destra {
-    width: 50%;                     /* Occupa il 50% dello spazio */
-    display: flex;                  /* Flex per centrare il contenuto */
-    color: white;
-    filter: blur(0.5px);
-}
-.contenuto{
-    margin-top: 60px;
-    margin-left: 70px;
-    font-family: 'Archivo Black';
-}
-.contenuto>h1{
-    margin-top: 50px;
-    text-transform: uppercase;
-    color:  rgb(235, 225, 18);
-    line-height: 2;
-}
-.contenuto>h2{
-    margin: 0;
-    font-family: 'Oswald';
-    font-size: 18px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-}
-.contenuto>p{
-    margin: 0;
-    line-height: 2;
-    font-family: 'Oswald';
-    font-size: 20px;
-}
-.contenuto>button{
-    margin-top: 80px;
-}
-.btn-yellow{
-    
-    width: 250px;
-    padding: 10px;
-    font-family: 'Oswald';
-    font-weight: 400;
-    letter-spacing: 2px;
-    font-size: 20px;
-    text-transform: uppercase;
-    background-color: rgb(235, 225, 18);
-    border: 0px;
-    cursor: pointer;
-}
+    }
 
-/*inizio quarta*/
+    .menu>.title {
+        margin-left: 50%;
+        transform: translateX(-50%);
+    }
 
-.quartaParte{
-    width: 100%;
-    height: 600px;
-    display: flex;  
-    background-color: rgb(242, 240, 240);  
-}
+    .menu>.title {
+        color: white;
 
-.tutorial{
-    width: 50%;                     /* Occupa il 50% dello spazio */
-    justify-content: center;        /* Centra orizzontalmente */
-    align-items: center;  
-    filter: blur(0.5px);
-    text-align: center;
-}
-.tutorial>h1{
-    margin-top: 110px;
-    font-family: 'Archivo Black';
-    font-size: 40px;
-    
-    text-transform: uppercase;
-}
-.tutorial>h2{
-    font-size: 30px;
-    font-family: 'Archivo Black';
-    text-transform: uppercase;
-    color: rgb(192, 184, 26);
-}
-.tutorial>button{
-    margin-top: 40px;
-}
-.tutorial>p{
-    margin-top: 60px;
-    line-height: 2;
-    font-family: 'Oswald';
-    font-size: 25px;
-}
+        display: inline-block;
 
-.scheda{
-    width: 50%;                     /* Occupa il 50% dello spazio */
-    justify-content: center;        /* Centra orizzontalmente */
-    align-items: center;  
-    filter: blur(0.5px);
-    text-align: center;
-}
-.scheda>h1{
-    margin-top: 110px;
-    font-family: 'Archivo Black';
-    font-size: 40px;
-    
-    text-transform: uppercase;
-}
-.scheda>p{
-    margin-top: 60px;
-    line-height: 2;
-    font-family: 'Oswald';
-    font-size: 25px;
-}
+    }
 
-.scheda>button{
-    margin-top: 40px;
-}
+    .burger {
+        cursor: pointer;
+        font-size: 40px;
+        color: white;
+        float: right;
+        display: none;
+    }
 
-.scheda,.tutorial{
-    color: black;
-}
+    #chiudi {
+        color: white;
+        float: right;
+        margin: 20px 20px;
+        cursor: pointer;
+        font-size: 20px;
+    }
 
+    .link {
+        display: flex;
+        flex-direction: column;
+    }
 
+    .link>.opzion {
+        list-style-type: none;
+        margin-top: 30px;
+    }
 
+    .link>.opzion>.collegamenti {
+        text-decoration: none;
+        color: white;
+        font-size: 40px;
 
+    }
 
+    .link>.opzion>.collegamenti:hover {
+        font-size: 42px;
+        transition: all 0.1s;
+    }
 
+    .nav-bar {
+        position: fixed;
+        display: flex;
+        justify-content: center;
+        /* Imposta il layout come Flexbox */
+        align-items: center;
+        /* Allinea gli elementi verticalmente al centro */
+        width: 100%;
+        height: 80px;
+        background-color: rgb(0, 0, 0);
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        z-index: 1000;
+    }
 
+    .nav {
+        margin: 0;
+        /* Rimuovi margini predefiniti */
+        text-align: center;
+        color: white;
+        /* Centra il testo nel suo spazio */
+        font-size: 18px;
+        font-weight: 500;
+        margin: 0 20px;
+    }
 
+    .nav:hover {
+        color: yellow;
+    }
 
+    .logo {
+        position: absolute;
+        left: 0;
+        margin-left: 30px;
+        font-size: 23px;
 
+    }
 
+    /*INIZIO SECONDA PARTE*/
 
+    .video-background {
+        width: 100%;
+        height: 100vh;
+        overflow: hidden;
 
+    }
 
+    video {
+        width: 100%;
+        /* Rende il video responsive */
+        height: 100%;
+        /* Rende il video responsive */
+        object-fit: cover;
+        /* Copre l'intera area */
+        margin: 0;
+    }
 
+    .titoloSopra {
+        width: 700px;
 
+        position: absolute;
+        z-index: 999;
+        right: 50%;
+        top: 50%;
+        transform: translateY(-50%);
+        transform: translateX(50%);
+    }
 
+    .titoloSopra>h2 {
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        color: rgb(255, 255, 255);
+        font-size: 40px;
+        text-align: center;
+        font-family: 'Archivo Black';
+        font-weight: 900;
+    }
 
+    .titoloSopra>h1 {
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        color: rgb(235, 225, 18);
+        font-size: 80px;
+        text-align: center;
+        font-family: 'Archivo Black';
+        font-weight: 900;
+    }
 
+    /*INIZIO TERZA*/
 
+    .terzaParte {
+        display: flex;
+        /* Usa Flexbox per allineare i div */
+        width: 100%;
+        height: 550px;
+        background-color: black;
+    }
 
-@media only screen and (max-width: 728px) {
-*{
-    box-sizing: border-box;
-}
-.active {
-    transform: translateX(100%); 
-    z-index: 1001;
-}
-.main{
-    position: absolute;
-    top: 40%;
-    transform: translateY(-50%);
-    margin-left: 10px;
-    z-index: 1001;
-    font-family: 'Archivo Black';
-    font-weight: 400;
-    
-}
-.burger {
-    cursor: pointer;
-    font-size: 40px;
-    color: white;
-    display: block; /* Mantenuto per l'allineamento */
-    margin-right: 10px; /* Se desideri un po' di spazio a destra */
-    right: 0;
-}
-#chiudi{
-    color: white;
-    float: right;
-    margin: 30px 50px;
-    cursor: pointer;
-    font-size: 20px;
-}
-.link{
-    display: flex;
-    flex-direction: column;
-}
-.link>.opzion{
-    list-style-type: none;
-    margin-top: 30px;
-}
-.link>.opzion>.collegamenti{
-    text-decoration: none;
-    color: white;
-    font-size: 20px;
-    margin-left: 0px;
-    text-decoration: underline rgb(235, 225, 18);
-    
-}
-.link>.opzion>.collegamenti:hover{
-    font-size: 20px;
-    transition: all 0.1s;
-}
-/*prima parte*/
-.nav-bar {
-    position: relative;
-    justify-content: space-between; /* Distribuisci gli elementi */
-    align-items: center; /* Centra verticalmente */
-    box-sizing: border-box;
-    padding: 0;
-    margin: 0;
-    width: 100%;
-}
-.burger {
-    cursor: pointer;
-    font-size: 30px;
-    color: white;
-    margin-left: auto;
-}
-.nav {
-    display: none;
+    .sinistra {
+        width: 50%;
+        /* Occupa il 50% dello spazio */
+        display: flex;
+        /* Flex per centrare il contenuto */
+        justify-content: center;
+        /* Centra orizzontalmente */
+        align-items: center;
+        /* Centra verticalmente */
+    }
 
-}
-.nav:hover{
-    color: yellow;
-}
-.logo{
-    position: absolute;
-    left: 0;
-    margin-left: 30px;
-    font-size: 23px;
-    
-}
-/*seconda parte*/
-.secondaParte{
-    height: 400px;
-    width: 100%;
-}
-.titoloSopra{
-    width: 700px;
-    position: absolute;
-    z-index: 999;
-    top: 200px;
-    
-    filter: blur(1px);
-}
-.titoloSopra>h2{
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    color: rgb(255, 255, 255);
-    font-size: 20px;
-    
-    font-family: 'Archivo Black';
-    font-weight: 900        ;
-}
-.titoloSopra>h1{
-    font-family: 'Oswald';
-    text-transform: uppercase;
-    color: rgb(235, 225, 18);
-    font-size: 40px;
-    font-family: 'Archivo Black';
-    font-weight:900        ;
-}
-.video-background>video{
-    height: 400px;
-}
-.destra{
-    width: 100%;
-}
-.contenuto{
-    margin: 10px;
-}
-.contenuto>.btn-yellow{
-    margin-top: 40px;
-}
-/*terza parte*/
-.terzaParte {
-    display: flex;
-    flex-direction: column;                   /* Usa Flexbox per allineare i div */
-    width: 100%;
-    height: 550px;
-    background-color: black;
-    margin-top: 0px;
-    padding: 0px;
-}
-.terzaParte>.destra>.contenuto>h2{
-    font-size: 10px;
-text-align: center;
-margin-top: 30px;
-}
-.terzaParte>.destra>.contenuto>h1{
-    font-size: 25px;
-    margin-top: 10px;
-    text-align: center;
-}
-.terzaParte>.destra>.contenuto>.btn-yellow{
-    margin-left: 50%;
-    transform: translateX(-50%);
-}
-.terzaParte>.sinistra>.foto{
-    display: none;
-}
-/*quarta parte*/
-.quartaParte{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-}
+    .destra {
+        width: 50%;
+        /* Occupa il 50% dello spazio */
+        display: flex;
+        /* Flex per centrare il contenuto */
+        color: white;
+    }
 
-.tutorial{
-    text-align: center;
-    width: 100%;
-}
-.tutorial>h1{
-    font-size: 20px;
-    margin: 0;
-    margin-top: 30px;
-}
-.tutorial>p{
-    font-size: 20px;
-    margin-top: 40px;
-}
+    .contenuto {
+        margin-top: 60px;
+        margin-left: 70px;
+        font-family: 'Archivo Black';
+    }
 
-.scheda{
-    text-align: center;
-    width: 100%;
-    background-color: rgb(230, 226, 226);
-}
-.scheda>h1{
-    font-size: 20px;
-    margin: 0;
-    margin-top: 30px;
-}
-.scheda>p{
-    font-size: 20px;
-    margin-top: 40px;
-    margin-bottom: 35px;
-}
-.scheda>button,.tutorial>button{
-    width: 210px;
-}
-img, video, iframe {
-    max-width: 100%;
-    height: auto;
-}
-}
+    .contenuto>h1 {
+        margin-top: 50px;
+        text-transform: uppercase;
+        color: rgb(235, 225, 18);
+        line-height: 2;
+    }
+
+    .contenuto>h2 {
+        margin: 0;
+        font-family: 'Oswald';
+        font-size: 18px;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+    }
+
+    .contenuto>p {
+        margin: 0;
+        line-height: 2;
+        font-family: 'Oswald';
+        font-size: 20px;
+    }
+
+    .contenuto>button {
+        margin-top: 80px;
+    }
+
+    .btn-yellow {
+
+        width: 250px;
+        padding: 10px;
+        font-family: 'Oswald';
+        font-weight: 400;
+        letter-spacing: 2px;
+        font-size: 20px;
+        text-transform: uppercase;
+        background-color: rgb(235, 225, 18);
+        border: 0px;
+        cursor: pointer;
+    }
+
+    /*inizio quarta*/
+
+    .quartaParte {
+        width: 100%;
+        height: 600px;
+        display: flex;
+        background-color: rgb(242, 240, 240);
+    }
+
+    .tutorial {
+        width: 50%;
+        /* Occupa il 50% dello spazio */
+        justify-content: center;
+        /* Centra orizzontalmente */
+        align-items: center;
+        text-align: center;
+    }
+
+    .tutorial>h1 {
+        margin-top: 110px;
+        font-family: 'Archivo Black';
+        font-size: 40px;
+
+        text-transform: uppercase;
+    }
+
+    .tutorial>h2 {
+        font-size: 30px;
+        font-family: 'Archivo Black';
+        text-transform: uppercase;
+        color: rgb(192, 184, 26);
+    }
+
+    .tutorial>button {
+        margin-top: 40px;
+    }
+
+    .tutorial>p {
+        margin-top: 60px;
+        line-height: 2;
+        font-family: 'Oswald';
+        font-size: 25px;
+    }
+
+    .scheda {
+        width: 50%;
+        /* Occupa il 50% dello spazio */
+        justify-content: center;
+        /* Centra orizzontalmente */
+        align-items: center;
+        text-align: center;
+    }
+
+    .scheda>h1 {
+        margin-top: 110px;
+        font-family: 'Archivo Black';
+        font-size: 40px;
+
+        text-transform: uppercase;
+    }
+
+    .scheda>p {
+        margin-top: 60px;
+        line-height: 2;
+        font-family: 'Oswald';
+        font-size: 25px;
+    }
+
+    .scheda>button {
+        margin-top: 40px;
+    }
+
+    .scheda,
+    .tutorial {
+        color: black;
+    }
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    @media only screen and (max-width: 728px) {
+        * {
+            box-sizing: border-box;
+        }
+
+        .container {
+            max-width: 100%;
+        }
+
+        .active {
+            transform: translateX(100%);
+            z-index: 1001;
+        }
+
+        .main {
+            position: absolute;
+            top: 40%;
+            transform: translateY(-50%);
+            margin-left: 10px;
+            z-index: 1001;
+            font-family: 'Archivo Black';
+            font-weight: 400;
+
+        }
+
+        .burger {
+            cursor: pointer;
+            font-size: 40px;
+            color: white;
+            display: block;
+            /* Mantenuto per l'allineamento */
+            margin-right: 10px;
+            /* Se desideri un po' di spazio a destra */
+            right: 0;
+        }
+
+        #chiudi {
+            color: white;
+            float: right;
+            margin: 30px 50px;
+            cursor: pointer;
+            font-size: 20px;
+        }
+
+        .link {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .link>.opzion {
+            list-style-type: none;
+            margin-top: 30px;
+        }
+
+        .link>.opzion>.collegamenti {
+            text-decoration: none;
+            color: white;
+            font-size: 20px;
+            margin-left: 0px;
+            text-decoration: underline rgb(235, 225, 18);
+
+        }
+
+        .link>.opzion>.collegamenti:hover {
+            font-size: 20px;
+            transition: all 0.1s;
+        }
+
+        /*prima parte*/
+        .nav-bar {
+            position: relative;
+            justify-content: space-between;
+            /* Distribuisci gli elementi */
+            align-items: center;
+            /* Centra verticalmente */
+            box-sizing: border-box;
+            padding: 0;
+            margin: 0;
+            width: 100%;
+        }
+
+        .burger {
+            cursor: pointer;
+            font-size: 30px;
+            color: white;
+            margin-left: auto;
+        }
+
+        .nav {
+            display: none;
+
+        }
+
+        .nav:hover {
+            color: yellow;
+        }
+
+        .logo {
+            position: absolute;
+            left: 0;
+            margin-left: 30px;
+            font-size: 23px;
+
+        }
+
+        /*seconda parte*/
+        .secondaParte {
+            height: 400px;
+            width: 100%;
+        }
+
+        .titoloSopra {
+            width: 700px;
+            position: absolute;
+            z-index: 999;
+            top: 200px;
+
+        }
+
+        .titoloSopra>h2 {
+            font-family: 'Oswald';
+            text-transform: uppercase;
+            color: rgb(255, 255, 255);
+            font-size: 20px;
+
+            font-family: 'Archivo Black';
+            font-weight: 900;
+        }
+
+        .titoloSopra>h1 {
+            font-family: 'Oswald';
+            text-transform: uppercase;
+            color: rgb(235, 225, 18);
+            font-size: 40px;
+            font-family: 'Archivo Black';
+            font-weight: 900;
+        }
+
+        .video-background>video {
+            height: 400px;
+        }
+
+        .destra {
+            width: 100%;
+        }
+
+        .contenuto {
+            margin: 10px;
+        }
+
+        .contenuto>.btn-yellow {
+            margin-top: 40px;
+        }
+
+        /*terza parte*/
+        .terzaParte {
+            display: flex;
+            flex-direction: column;
+            /* Usa Flexbox per allineare i div */
+            width: 100%;
+            height: 550px;
+            background-color: black;
+            margin-top: 0px;
+            padding: 0px;
+        }
+
+        .terzaParte>.destra>.contenuto>h2 {
+            font-size: 10px;
+            text-align: center;
+            margin-top: 30px;
+        }
+
+        .terzaParte>.destra>.contenuto>h1 {
+            font-size: 25px;
+            margin-top: 10px;
+            text-align: center;
+        }
+
+        .terzaParte>.destra>.contenuto>.btn-yellow {
+            margin-left: 50%;
+            transform: translateX(-50%);
+        }
+
+        .terzaParte>.sinistra>.foto {
+            display: none;
+        }
+
+        /*quarta parte*/
+        .quartaParte {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .tutorial {
+            text-align: center;
+            width: 100%;
+        }
+
+        .tutorial>h1 {
+            font-size: 20px;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        .tutorial>p {
+            font-size: 20px;
+            margin-top: 40px;
+        }
+
+        .scheda {
+            text-align: center;
+            width: 100%;
+            background-color: rgb(230, 226, 226);
+        }
+
+        .scheda>h1 {
+            font-size: 20px;
+            margin: 0;
+            margin-top: 30px;
+        }
+
+        .scheda>p {
+            font-size: 20px;
+            margin-top: 40px;
+            margin-bottom: 35px;
+        }
+
+        .scheda>button,
+        .tutorial>button {
+            width: 210px;
+        }
+
+        img,
+        video,
+        iframe {
+            max-width: 100%;
+            height: auto;
+        }
+    }
