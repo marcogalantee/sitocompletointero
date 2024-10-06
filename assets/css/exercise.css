@@ -244,4 +244,30 @@ html {
     margin: 1px;
     letter-spacing: unset;
 }
+
+
+.preview-btn{
+    display: none;
+}
+.box-upper{
+    height: unset;
+}
+
+.box-upper>h2,.box-upper>p,.box-upper>b{
+    margin: 0px;
+    margin: 10px;
+}
+
+.box-upper>h2{
+    margin-top: 50px;
+    margin-bottom: 10px;
+}
+.box-upper>p{
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+.box-upper>b{
+    font-size: 19px;
+    margin-top: 30px;
+}
 }
