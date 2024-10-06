@@ -1,3 +1,7 @@
+html{
+    scroll-behavior: smooth;
+}
+
 .video-background{
     width: 100%;
     height: 100vh;
@@ -71,17 +75,50 @@
     line-height: 2;
     
 }
-.boxBianco>button{
-    
-}
+
 .span{
     text-decoration: underline rgb(235, 225, 18);
 }
 
 .TerzaParte{
+    display: flex;
     width: 100%;
-    height: 100vh;
-    background-color: white;
-    border: 1px solid red;
+    background-color: rgb(0, 0, 0);
+    justify-content: center;
+    align-items: center;
+}
 
+.terza{
+    width: 95%;
+    height: 90%;
+    background-color: white;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    flex-direction: column  ;
+}
+.terza>h1,.terza>p{
+    margin: 0;
+}
+.terza>h1{
+    margin-top: 40px;
+    text-transform: uppercase;
+    font-family: 'Archivo Black';
+    color: rgb(219, 219, 46);
+}
+.terza>p{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    font-family: 'Oswald';
+    font-size: 24px;
+
+}
+
+.box{
+    margin-top: 80px;
+    width: 95%;
+    border-right: 2px solid rgb(219, 219, 46); /* Bordo a destra */
+    border-bottom: 2px solid rgb(219, 219, 46); /* Bordo in basso */
+    border-left: 2px solid rgb(219, 219, 46);   /* Bordo a sinistra */
+    height: 200px;
 }
