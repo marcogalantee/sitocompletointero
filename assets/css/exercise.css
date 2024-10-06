@@ -169,7 +169,10 @@ html {
         color: rgb(219, 219, 46);
     }
 
-   
+   .btn-yellow:hover{
+    background-color: rgb(167, 159, 15);
+    transition: 0.2s;
+   }
 .preview-btn {
     position: absolute;
     top: 10px;
