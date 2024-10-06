@@ -24,3 +24,14 @@ function hidePreview(button) {
     const preview = button.nextElementSibling;
     preview.style.display = "none"; // Nascondi l'anteprima video
 }
+
+function showSection(button) {
+    // Nasconde solo le sezioni dei contenuti specifici
+    document.querySelectorAll('.upper, .coreAbs, .lower, .cardio').forEach(section => {
+        section.style.display = 'none';
+    });
+    
+    // Mostra la sezione corrispondente all'attributo data-target del bottone
+    const targetId = button.getAttribute('data-target');
+    document.getElementById(targetId).style.display = 'block';
+}

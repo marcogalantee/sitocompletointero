@@ -86,16 +86,16 @@
                 <h1>Tutorial step by step</h1>
                 <p>You have no more excuses, train!</p>
                 <div class="bottoni">
-                    <button class="btn-yellow">Upper body</button>
-                    <button class="btn-yellow">Core and Abs</button>
-                    <button class="btn-yellow">lower body</button>
-                    <button class="btn-yellow">Cardio and Total Body</button>
+                    <button class="btn-yellow" data-target="upper" onclick="showSection(this)">Upper body</button>
+                    <button class="btn-yellow" data-target="coreAbs" onclick="showSection(this)">Core and Abs</button>
+                    <button class="btn-yellow" data-target="lower" onclick="showSection(this)">lower body</button>
+                    <button class="btn-yellow" data-target="cardio" onclick="showSection(this)">Cardio and Total Body</button>
                 </div>
 
                 <hr style="border: 1px solid rgb(235, 225, 18); width: 95%;">
             </div>
 
-            <div class="upper">
+            <div class="upper" id="upper">
                 <div class="box-upper">
                     <h2>Push-Up</h2>
                     <b>how to do it:</b>
@@ -105,64 +105,159 @@
                     <b>What is it for:</b>
                     <p>Strengthens and stabilizes the upper body, increasing arm and shoulder endurance and improving
                         body control during pushing movements.</p>
-                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)" onmouseout="hidePreview(this)">Preview</button>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
                     <div class="video-preview" style="display: none;">
-                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"autoplay muted loop></video>
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
                     </div>
                 </div>
                 <div class="box-upper">
                     <h2>Diamond Push-Up</h2>
                     <b>how to do it:</b>
-                    <p>Similar to a traditional push-up, but place your hands together under your chest, forming a diamond shape. Lower your chest toward your hands, then push up.</p>
+                    <p>Similar to a traditional push-up, but place your hands together under your chest, forming a
+                        diamond shape. Lower your chest toward your hands, then push up.</p>
                     <b>What is it for:</b>
-                    <p>Increases arm strength, focusing on the inner arm area to improve stability in movements requiring precision.</p>
-                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)" onmouseout="hidePreview(this)">Preview</button>
+                    <p>Increases arm strength, focusing on the inner arm area to improve stability in movements
+                        requiring precision.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
                     <div class="video-preview" style="display: none;">
-                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"autoplay muted loop></video>
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
                     </div>
                 </div>
                 <div class="box-upper">
                     <h2>Plyometric (Explosive) Push-Up</h2>
                     <b>how to do it:</b>
-                    <p> Perform a regular push-up, but push off forcefully to lift your hands off the floor, landing with control.</p>
+                    <p> Perform a regular push-up, but push off forcefully to lift your hands off the floor, landing
+                        with control.</p>
                     <b>What is it for:</b>
-                    <p>Enhances explosiveness and speed, preparing you for quick movements that require coordination and strength.</p>
-                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)" onmouseout="hidePreview(this)">Preview</button>
+                    <p>Enhances explosiveness and speed, preparing you for quick movements that require coordination and
+                        strength.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
                     <div class="video-preview" style="display: none;">
-                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"autoplay muted loop></video>
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
                     </div>
                 </div>
                 <div class="box-upper">
                     <h2>Chair Dips</h2>
                     <b>how to do it:</b>
-                    <p>Place two chairs beside your hips and rest your hands on them. Lower yourself until your elbows form a 90-degree angle, then push back up.</p>
+                    <p>Place two chairs beside your hips and rest your hands on them. Lower yourself until your elbows
+                        form a 90-degree angle, then push back up.</p>
                     <b>What is it for:</b>
-                    <p>Increases endurance in downward pressing movements, improving your ability to support your body weight.</p>
-                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)" onmouseout="hidePreview(this)">Preview</button>
+                    <p>Increases endurance in downward pressing movements, improving your ability to support your body
+                        weight.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
                     <div class="video-preview" style="display: none;">
-                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"autoplay muted loop></video>
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
                     </div>
                 </div>
                 <div class="box-upper">
                     <h2>Pike Push-Up</h2>
                     <b>how to do it:</b>
-                    <p>Begin in a downward-facing dog position (as in yoga), lower your head toward the floor by bending your elbows, then push back up.</p>
+                    <p>Begin in a downward-facing dog position (as in yoga), lower your head toward the floor by bending
+                        your elbows, then push back up.</p>
                     <b>What is it for:</b>
-                    <p>Strengthens the shoulders and prepares the body for vertical pressing movements, helpful for stabilizing the upper body in upward movements.</p>
-                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)" onmouseout="hidePreview(this)">Preview</button>
+                    <p>Strengthens the shoulders and prepares the body for vertical pressing movements, helpful for
+                        stabilizing the upper body in upward movements.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
                     <div class="video-preview" style="display: none;">
-                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"autoplay muted loop></video>
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
                     </div>
                 </div>
             </div>
+            <div class="coreAbs" id="coreAbs" style="display: none;">
+                <div class="box-upper abs">
+                    <h2>Plank</h2>
+                    <b>how to do it:</b>
+                    <p> Lie face down and lift yourself onto your forearms and toes, keeping your body in a straight line.</p>
+                    <b>What is it for:</b>
+                    <p>Strengthens the core to improve trunk stability, essential for supporting the body in nearly all physical movements.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
+                    <div class="video-preview" style="display: none;">
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
+                    </div>
+                </div>
+                <div class="box-upper abs">
+                    <h2>Side Plank</h2>
+                    <b>how to do it:</b>
+                    <p> Lie on your side, supporting your body on one forearm and lifting your body off the floor.</p>
+                    <b>What is it for:</b>
+                    <p>Improves lateral core stability and helps maintain balance, critical for movements that require an upright posture.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
+                    <div class="video-preview" style="display: none;">
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
+                    </div>
+                </div>
+                <div class="box-upper abs">
+                    <h2>Mountain Climbers</h2>
+                    <b>how to do it:</b>
+                    <p>In a high plank position, bring one knee toward your chest, quickly alternating legs.</p>
+                    <b>What is it for:</b>
+                    <p>Increases cardiovascular endurance, prepares the core for dynamic movements, and strengthens leg agility.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
+                    <div class="video-preview" style="display: none;">
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
+                    </div>
+                </div>
+                <div class="box-upper abs">
+                    <h2>Leg Raises</h2>
+                    <b>how to do it:</b>
+                    <p>Lying on your back, lift your legs to a 90-degree angle, then lower them slowly.</p>
+                    <b>What is it for:</b>
+                    <p>Strengthens the lower core, important for stabilizing the back and improving posture.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
+                    <div class="video-preview" style="display: none;">
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
+                    </div>
+                </div>
+                <div class="box-upper abs">
+                    <h2>Bicycle Crunches</h2>
+                    <b>how to do it:</b>
+                    <p>Lying on your back, simulate a pedaling motion by bringing your elbow toward the opposite knee.</p>
+                    <b>What is it for:</b>
+                    <p>Improves coordination and strengthens twisting core movements, essential for actions that require torso rotation.</p>
+                    <button class="preview-btn btn-yellow" onmouseover="showPreview(this)"
+                        onmouseout="hidePreview(this)">Preview</button>
+                    <div class="video-preview" style="display: none;">
+                        <video src="../../../assets/media/home/Video senza titolo - Realizzato con Clipchamp.mp4"
+                            autoplay muted loop></video>
+                    </div>
+                </div>
 
-
-
-
-
-
-
+            </div>
+            
+            <div class="lower" id="lower" style="display: none;">
+                
+            </div>
+            
+            <div class="cardio" id="cardio" style="display: none;">
+            </div>
         </div>
+
+
+
+
+
+
+
+
+    </div>
 
 
     </div>
