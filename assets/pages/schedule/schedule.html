@@ -1,0 +1,1398 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Scheda di Allenamento Personalizzata</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Bodoni+Moda+SC:ital,opsz,wght@0,6..96,400..900;1,6..96,400..900&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="../../css/style.css">
+    <link rel="stylesheet" href="../../css/exercise.css">
+
+    <style>
+        body {
+            font-family: 'Archivo Black';
+            background-color: #f4f4f4;
+            
+        }
+
+        .container {
+            width: 100%;
+            margin: auto;
+            background: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+        h1{
+            text-transform: uppercase;
+            color: rgb(235, 225, 18);
+        }
+        p{
+            font-size: 25px;
+            text-transform: uppercase;
+        }
+        h2{
+            margin-bottom: 50px;
+        }
+        h1, h2,p {
+            text-align: center;
+
+        }
+        select{
+            font-family: 'Oswald';
+            font-size: 18px;
+            letter-spacing: 1px;
+        }
+        option{
+            font-family: 'Archivo Black';
+
+        }
+        
+        .day-section {
+            width: 80%;
+            margin-left: 50%;
+            transform: translateX(-50%);
+            margin-top: 60px;
+            margin-bottom: 20px;
+            padding: 10px;
+            border-top: 0px;
+            border-left: 2px solid rgb(235, 225, 18);
+            border-right: 02px solid rgb(235, 225, 18);
+            border-bottom: 2px solid rgb(235, 225, 18);
+            border-radius: 4px;
+        }
+
+        .exercise-container {
+            margin: 10px 0;
+        }
+
+        .exercise-select {
+            width: 100%;
+            padding: 8px;
+            border-radius: 3px;
+            border: 1px solid #ccc;
+            margin-bottom: 10px;
+        }
+
+        button {
+            margin-left: 50%;
+            transform: translateX(-50%);
+            padding: 10px;
+            background-color: rgb(235, 225, 18);
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            margin-top: 10px;
+            font-family: 'Oswald';
+        }
+
+       
+
+        
+
+        /* Stile aggiuntivo per migliorare la visualizzazione */
+        ul {
+            list-style-type: disc;
+            padding-left: 20px;
+        }
+
+        #output {
+            overflow: hidden;
+            padding: 0%;
+            margin-top: 20px;
+            background-color: rgb(235, 225, 18);
+            border-radius: 0px;
+            /* Cambia il colore del testo dell'intero div */
+            color: rgb(0, 0, 0); /* Colore del testo principale */
+            text-align: center;
+        }
+
+        /* Cambiare il colore del titolo principale nell'output */
+        #output h2 {
+            margin-top: 70px;
+            margin-bottom: 80px;
+            text-transform: uppercase;
+        }
+
+        /* Cambiare il colore dei sottotitoli dei giorni nell'output */
+        #output h3 {
+            color: #000000; /* Ad esempio, verde */
+            font-family: 'Archivo Black';
+            letter-spacing: 1px;
+            text-transform: uppercase;
+            
+        }
+
+        /* Cambiare il colore degli elementi della lista nell'output */
+        #output ul li {
+            color: #000000; /* Ad esempio, viola */
+            font-family: 'Oswald';
+            text-align: center;
+        }
+        #output ul{
+            text-align: center;
+            list-style-position: inside;
+        }
+        
+    </style>
+</head>
+<body>
+    <div class="primaParte">
+
+
+        <div class="nav-bar">
+            <h1 class="nav"><a href="../../../index.html">HOME</a></h1>
+            <h1 class="nav"><a href="../exercises/exercises.html">EXERCISES</a></h1>
+            <h1 class="nav"><a href="../schedule/schedule.html">YOUR TRAINING SCHEDULE</a></h1>
+            <i class="fa-solid fa-bars burger" id="burger"></i>
+        </div>
+        <div class="menu" id="menu">
+            <i class="fa-solid fa-x" id="chiudi"></i>
+
+            <div class="main">
+                <ul class="link">
+                    <li class="opzion"><a href="" class="collegamenti">HOME</a></li>
+                    <li class="opzion"><a href="../exercises/exercises.html" class="collegamenti">EXERCISES</a></li>
+                    <li class="opzion"><a href="../schedule/schedule.html" class="collegamenti">YOUR TRAINING SCHEDULE</a></li>
+
+                </ul>
+            </div>
+
+        </div>
+
+    </div>
+
+    <div class="secondaParte">
+        <div class="video-background">
+            <img src="../../media/schedule/248893.jpg" alt="">
+        </div>
+        <div class="titoloSopra">
+            <h2>Create your personal training schedule</h2>
+        <h1>Start your training now</h1>
+        </div>
+        <div class="boxBianco">
+            <h3>Are you ready?</h3>
+            <p>Are you ready to get started? Well here you will have the opportunity to create your own training plan with the exercises you prefer, otherwise you can follow the schedule recommended by us.<span
+                    class="span"><a href="../../pages/schedule/schedule.html">training plan.</a></span></p>
+            <a href="#TerzaParte"><button class="btn-yellow">let's get started</button></a>
+
+        </div>
+    </div>
+       
+    
+    <div class="container">
+    
+
+        <h1>Crea la tua Scheda di Allenamento Settimanale</h1>
+        <p>Start your training now</p>
+        <form id="workoutForm">
+            <!-- Lista completa dei giorni della settimana -->
+            <!-- Ripeti questa sezione per ogni giorno della settimana -->
+            <!-- Esempio per Lunedì -->
+            <div class="day-section" id="Monday">
+                <h2>Lunedì</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Monday-1" class="exercise-select">
+                        <!-- Lower Body Exercises -->
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value=""disabled>Seleziona esercizio</option>
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Monday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Monday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Monday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Ripeti per gli altri giorni della settimana (Martedì, Mercoledì, ecc.) -->
+            <!-- Martedì -->
+            <div class="day-section" id="Tuesday">
+                <h2>Martedì</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Tuesday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Tuesday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Tuesday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Tuesday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Mercoledì -->
+            <div class="day-section" id="Wednesday">
+                <h2>Mercoledì</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Wednesday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Wednesday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Wednesday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Wednesday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Giovedì -->
+            <div class="day-section" id="Thursday">
+                <h2>Giovedì</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Thursday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Thursday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Thursday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Thursday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Venerdì -->
+            <div class="day-section" id="Friday">
+                <h2>Venerdì</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Friday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Friday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Friday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Friday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Sabato -->
+            <div class="day-section" id="Saturday">
+                <h2>Sabato</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Saturday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Saturday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Saturday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Saturday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Domenica -->
+            <div class="day-section" id="Sunday">
+                <h2>Domenica</h2>
+                <div class="exercise-container">
+                    <select name="exercise-Sunday-1" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Sunday-2" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>  
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Sunday-3" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+                <div class="exercise-container">
+                    <select name="exercise-Sunday-4" class="exercise-select">
+                        <optgroup label="Upper Body Exercises" > 
+                            <option value="push_up">Push-Up</option>
+                            <option value="diamond_push_up">Diamond Push-Up</option>
+                            <option value="plyometric_push_up">Plyometric Push-Up</option>
+                            <option value="chair_dips">Chair Dips</option>
+                            <option value="pike_push_up">Pike Push-Up</option>
+                        </optgroup>
+                        
+                        <optgroup label="Lower Body Exercises">
+                            <option value="squat">Squat</option>
+                            <option value="lunges">Lunges</option>
+                            <option value="side_lunges">Side Lunges</option>
+                            <option value="squat_jumps">Squat Jumps</option>
+                            <option value="pistol_squat">Pistol Squat (Single-Leg Squat)</option>
+                        </optgroup>
+                        
+                        <optgroup label="Core and Abdominal Exercises">
+                            <option value="plank">Plank</option>
+                            <option value="side_plank">Side Plank</option>
+                            <option value="mountain_climbers">Mountain Climbers</option>
+                            <option value="leg_raises">Leg Raises</option>
+                            <option value="bicycle_crunches">Bicycle Crunches</option>
+                        </optgroup>
+                        
+                        <optgroup label="Cardiovascular and Total Body Exercises">
+                            <option value="burpees">Burpees</option>
+                            <option value="high_knees">High Knees</option>
+                            <option value="jumping_jacks">Jumping Jacks</option>
+                            <option value="skipping_rope">Skipping Rope</option>
+                            <option value="bear_crawl">Bear Crawl</option>
+                        </optgroup>
+                    </select>
+                </div>
+            </div>
+
+            <button type="button" onclick="generateWorkoutPlan()">Genera Scheda</button>
+            <button type="button" onclick="resetSelections()">Resetta Selezioni</button>
+            <button type="button" onclick="printWorkoutPlanAsPDF()">Stampa Scheda come PDF</button>
+
+        </form>
+        <div id="output">
+            
+        </div>
+    </div>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
+    <script>
+        // Funzione per limitare le selezioni a 4 esercizi per giorno
+        function limitSelections(day) {
+    const selectedExercises = [];
+    for (let i = 1; i <= 4; i++) {
+        const value = document.querySelector(`select[name="exercise-${day}-${i}"]`).value;
+        if (value) {
+            selectedExercises.push(value);
+        }
+    }
+
+    for (let i = 1; i <= 4; i++) {
+        const select = document.querySelector(`select[name="exercise-${day}-${i}"]`);
+        if (select) {
+            const options = select.options;
+            for (let j = 0; j < options.length; j++) {
+                if (selectedExercises.includes(options[j].value) && options[j].value !== select.value) {
+                    options[j].disabled = true;
+                } else {
+                    options[j].disabled = false;
+                }
+            }
+        }
+    }
+}
+
+// Funzione per generare la scheda di allenamento
+function generateWorkoutPlan() {
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const dayNames = {
+        'Monday': 'Lunedì',
+        'Tuesday': 'Martedì',
+        'Wednesday': 'Mercoledì',
+        'Thursday': 'Giovedì',
+        'Friday': 'Venerdì',
+        'Saturday': 'Sabato',
+        'Sunday': 'Domenica'
+    };
+    let workoutPlan = '<h2>La tua Scheda di Allenamento Settimanale</h2>';
+
+    days.forEach(day => {
+        let exercises = [];
+        for (let i = 1; i <= 4; i++) {
+            const exercise = document.querySelector(`select[name="exercise-${day}-${i}"]`).value;
+            if (exercise) {
+                exercises.push(exercise.replace('_', ' ').toUpperCase());
+            }
+        }
+        if (exercises.length > 0) {
+            workoutPlan += `<h3>${dayNames[day]}</h3><ul>`;
+            exercises.forEach(ex => {
+                workoutPlan += `<li>${ex}</li>`;
+            });
+            workoutPlan += `</ul>`;
+        }
+    });
+
+    document.getElementById('output').innerHTML = workoutPlan;
+}
+
+// Funzione per salvare le selezioni nel localStorage
+function saveSelections() {
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+    const selections = {};
+
+    days.forEach(day => {
+        selections[day] = [];
+        for (let i = 1; i <= 4; i++) {
+            const select = document.querySelector(`select[name="exercise-${day}-${i}"]`);
+            if (select) {
+                selections[day].push(select.value);
+            }
+        }
+    });
+
+    localStorage.setItem('workoutSelections', JSON.stringify(selections));
+}
+
+// Funzione per caricare le selezioni dal localStorage
+function loadSelections() {
+    const savedSelections = localStorage.getItem('workoutSelections');
+    if (savedSelections) {
+        const selections = JSON.parse(savedSelections);
+        const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+        days.forEach(day => {
+            if (selections[day]) {
+                for (let i = 1; i <= 4; i++) {
+                    const select = document.querySelector(`select[name="exercise-${day}-${i}"]`);
+                    if (select && selections[day][i - 1]) {
+                        select.value = selections[day][i - 1];
+                    }
+                }
+                // Dopo aver impostato i valori, applica la limitazione
+                limitSelections(day);
+            }
+        });
+    }
+}
+
+// Funzione per resettare le selezioni
+function resetSelections() {
+    if (confirm("Sei sicuro di voler resettare tutte le selezioni?")) {
+        localStorage.removeItem('workoutSelections');
+        const selects = document.querySelectorAll('.exercise-select');
+        selects.forEach(select => {
+            select.value = "";
+            select.disabled = false;
+        });
+        document.getElementById('output').innerHTML = "";
+    }
+}
+
+// Funzione per stampare la scheda come PDF
+function printWorkoutPlanAsPDF() {
+    const outputElement = document.getElementById('output');
+    if (!outputElement.innerHTML.trim()) {
+        alert("Nessuna scheda di allenamento disponibile per la stampa.");
+        return;
+    }
+
+    const { jsPDF } = window.jspdf; // Ottieni l'oggetto jsPDF
+    const pdf = new jsPDF(); // Crea una nuova istanza di jsPDF
+
+    // Aggiungi il contenuto HTML al PDF
+    pdf.html(outputElement, {
+        callback: function (doc) {
+            doc.save('scheda_allenamento.pdf'); // Salva il PDF con il nome specificato
+        },
+        x: 10,
+        y: 10
+    });
+}
+
+// Event Listener per salvare le selezioni quando cambiano
+document.addEventListener('DOMContentLoaded', () => {
+    const days = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday', 'Sunday'];
+
+    days.forEach(day => {
+        for (let i = 1; i <= 4; i++) {
+            const select = document.querySelector(`select[name="exercise-${day}-${i}"]`);
+            if (select) {
+                select.addEventListener('change', () => {
+                    limitSelections(day);
+                    saveSelections(); // Salva le selezioni al cambiamento senza aggiornare l'output
+                });
+            }
+        }
+    });
+
+    // Carica le selezioni salvate al caricamento della pagina
+    loadSelections();
+});
+</script>
+    
+    <script src="../../js/script.js"></script>
+    
+</body>
+</html>
